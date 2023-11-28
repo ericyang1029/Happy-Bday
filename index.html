@@ -175,10 +175,28 @@ h1 {
 	  </style>
 </head>
 <body>
-<audio autoplay>
-  <source src="music.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+<button id="ASong" onClick="playPause()">
+  <audio
+    src="music.mp3"
+    autoplay
+    loop
+  ></audio>
+  点我
+</button>
+<script>
+  var aud = document.getElementById("ASong").children[0];
+  var isPlaying = false;
+  aud.pause();
+
+  function playPause() {
+    if (isPlaying) {
+      aud.pause();
+    } else {
+      aud.play();
+    }
+    isPlaying = !isPlaying;
+  }
+</script>
 <div class="Happy">
 	<h1>生日快乐 <br> 
              邱飞铭
